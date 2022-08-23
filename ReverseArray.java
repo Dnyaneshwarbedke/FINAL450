@@ -1,0 +1,72 @@
+
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ReverseArray {
+    public void reverse(String s[], int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(s[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+        Integer ar[] = { 1, 2, 3, 4, 10, 9, 8, 7, 6, 5, 4, 3 };
+        int n = arr.length;
+        int n1 = ar.length;
+
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println("");
+
+        // USING INBUILT METHOD
+        Collections.reverse(Arrays.asList(ar));
+        // System.out.println(Arrays.asList(ar));
+        for (int index = 0; index < ar.length; index++) {
+            System.out.print(ar[index] + " ");
+        }
+
+        // SWAPING FUNCTION
+        int a[] = { 11, 2, 3, 4, 5, 3, 1, 1 };
+        int temp;
+        int m = a.length;
+        for (int i = 0; i < m; i++) {
+            for (int j = i; j < m; j++) {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+        System.out.println(" ");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println(" ");
+        // 4. Using StringBuilder.append() method
+        String[] str1 = { "hello", "world" };
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str1.length; i > 0; i--) {
+            reversed.append(str1[i - 1]).append(" ");
+        }
+
+        String[] reversedArray = reversed.toString().split(" ");
+
+        System.out.println(Arrays.toString(reversedArray));
+
+        // 5.ReVERSE A STRING
+        String str[] = { "dny", "praju" };
+        int s = str.length;
+        System.out.println(s);
+        String t;
+        for (int i = 0; i < s; i++) {
+            for (int j = i; j < s; j++) {
+                t = str[i];
+                str[i] = str[j];
+                str[j] = t;
+            }
+        }
+        ReverseArray r = new ReverseArray();
+        r.reverse(str, s);
+    }
+}
